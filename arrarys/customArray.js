@@ -1,4 +1,4 @@
-class TestArray {
+class CustomArray {
   constructor() {
     this.length = 0;
 
@@ -40,6 +40,14 @@ class TestArray {
   getElementAtIndex(index) {
     return this.data[index];
   }
+
+  indexOf(item) {
+    for (let i = 0; i < this.length; i++) {
+      if (this.data[i] === item) {
+        return i;
+      }
+    }
+  }
 }
 
-module.exports = TestArray;
+module.exports = CustomArray;
