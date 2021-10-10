@@ -32,12 +32,11 @@ class LinkedList {
     this.head = this.head.next
   }
 
-  // needs more work
   deleteLast() {
     let node = this.head;
     while(node) {
-      if (!node.next) {
-        delete node;
+      if (!node.next.next) {
+        node.next = null;
         return;
       }
       node = node.next;
@@ -75,6 +74,28 @@ class LinkedList {
       node = node.next;
     }
     return count;
+  }
+
+  toArray() {
+    let node = this.head;
+    let output = [];
+    while (node) {
+      output.push(node.data)
+      node = node.next;
+    }
+    return output;
+  }
+
+  reverse() {
+    let arr = this.toArray();
+    let head = new Node(arr[0])
+
+    let output = new LinkedList(head)
+    for (let i = 1; i < arr.length; i++) {
+      output.addFirst(new Node(arr[i]));
+    }
+    return output;
+  
   }
 }
 

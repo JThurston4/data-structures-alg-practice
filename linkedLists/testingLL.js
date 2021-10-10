@@ -15,8 +15,7 @@ let list = new LinkedList(node1);
 list.addLast(node5)
 console.log(list);
 
-list.deleteLast()
 // list.deleteFirst();
-console.log(list);
+console.log(list.reverse());
 
 
