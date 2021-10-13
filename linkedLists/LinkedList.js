@@ -97,6 +97,31 @@ class LinkedList {
     return output;
   
   }
+
+  getKthFromTheEnd(k) {
+    if (!this.head) {
+      throw new Error('Linked list is empty');
+    }
+
+    let distance = k;
+    let node = this.head;
+    let pointer = node;
+
+    while (!!distance) {
+      pointer = pointer.next;
+      distance--;
+      if (!pointer) {
+        throw new Error('Invalid Argument');
+      }
+    }
+    
+    while(pointer.next) {
+      pointer = pointer.next;
+      node = node.next;
+    }
+    return node;
+  }
+
 }
 
 module.exports = {LinkedList, Node};

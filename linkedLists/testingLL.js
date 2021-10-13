@@ -13,9 +13,9 @@ node3.next = node4;
 let list = new LinkedList(node1);
 
 list.addLast(node5)
-console.log(list);
+// console.log(list);
 
 // list.deleteFirst();
-console.log(list.reverse());
+console.log(list.getKthFromTheEnd(-1));
 
 
