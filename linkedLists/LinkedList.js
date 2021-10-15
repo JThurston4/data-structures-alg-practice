@@ -122,6 +122,23 @@ class LinkedList {
     return node;
   }
 
+  findMiddle() {
+
+    let node = this.head;
+    let middle = this.head;
+    let counter = 0;
+    while(node) {
+      if (!node.next && counter % 2 === 1) {
+        return [middle, middle.next]
+        // console.log(middle)
+      }
+      node = node.next;
+      counter % 2 !== 0 ? middle = middle.next : ``
+      counter++
+    }
+    return middle;
+  }
+
 }
 
 module.exports = {LinkedList, Node};

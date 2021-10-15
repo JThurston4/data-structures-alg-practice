@@ -16,6 +16,6 @@ list.addLast(node5)
 // console.log(list);
 
 // list.deleteFirst();
-console.log(list.getKthFromTheEnd(-1));
+console.log(list.findMiddle());
 
 
