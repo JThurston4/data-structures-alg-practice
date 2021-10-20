@@ -14,22 +14,24 @@ const isBalanced = (string) => {
   
   for (let i = 0; i < string.length; i++) {
     let c = string[i];
-    if (c === '[' || c === ']' || c === '<' || c === '>' || c === '{' || c === '}' || c === '(' || c === ')') {
+    if (c === '[' || c === '<' || c === '{' || c === '(' ) {
       stack.push(c);
+    } else if (c === ']' || c === '>' || c === '}' || c === ')') {
+      if (dict[c] !== stack.pop()) {
+        return false
+      }
     }
   }
 
-  while (stack.top) {
-    if (dict[stack.pop()] === stack.peek() ) {
-      stack.pop()
-    } else {
-      output = false;
-    } 
+  if (stack.isEmpty()) {
+    return true
   }
-  return output;
+  
+  return false;
 }
 
-console.log(isBalanced('[(])'))
+console.log(isBalanced('[hi(my{name<is>josh}how)are]you[?<.>]'))
+console.log(isBalanced('[<'))
 
 
 const reverseString = (string) => {
