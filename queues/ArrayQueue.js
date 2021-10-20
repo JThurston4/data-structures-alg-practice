@@ -45,7 +45,7 @@ class ArrayQueue {
             stack.push(this.dequeue())
         }
         
-        let output = new Queue();
+        let output = new ArrayQueue();
         while(!stack.isEmpty()) {
             output.enqueue(stack.pop())
         }
