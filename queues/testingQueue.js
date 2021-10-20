@@ -1,13 +1,11 @@
-const Queue = require('./Queue');
+const Queue = require('./ArrayQueue');
 
 let q = new Queue();
 
 q.enqueue(10)
 q.enqueue(20)
 q.enqueue(30)
-q.enqueue('hello my name is winter paladain AF')
+q.enqueue(40)
 q.enqueue(50)
 
-q.dequeue()
-console.log(q.front())
-console.log(q.back())
+console.log(q.reverse())

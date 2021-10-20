@@ -1,4 +1,5 @@
-class Queue {
+const Stack = require('../stacks/Stack');
+class ArrayQueue {
     constructor() {
         this.items = [];
     }
@@ -37,14 +38,19 @@ class Queue {
         return !this.items.length
     }
 
-    // printQueue()
-    printQueue() {
-        let str = ''
-        for (let i = 0; i < this.items.length; i++) {
-            str += this.items[i] + " "
+    // only allowed to add, remove, and isempty
+    reverse() {
+        let stack = new Stack();
+        while(!this.isEmpty()) {
+            stack.push(this.dequeue())
         }
-        return str;
+        
+        let output = new Queue();
+        while(!stack.isEmpty()) {
+            output.enqueue(stack.pop())
+        }
+        return output;
     }
 }
 
-module.exports = Queue;
+module.exports = ArrayQueue;
