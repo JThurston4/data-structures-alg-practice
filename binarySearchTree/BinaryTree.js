@@ -74,6 +74,15 @@ class BinaryTree {
     this.traversePostOrder(root.rightChild)
     console.log(root.data)
   }
+
+  height(root) {
+    // console.log(root)
+    if (root === null) {
+      return -1;
+    }
+
+    return 1 + Math.max(this.height(root.leftChild), this.height(root.rightChild));
+  }
 }
 
 module.exports = BinaryTree;
