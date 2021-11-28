@@ -42,6 +42,38 @@ class BinaryTree {
     }
     return false
   }
+
+  // preOrder = root left right
+  // inOrder = left root right
+  // postOrder = left right root
+  traversePreOrder(root) {
+    if (root === null) {
+      return;
+    }
+    console.log(root.data)
+    this.traversePreOrder(root.leftChild)
+    this.traversePreOrder(root.rightChild)
+  }
+
+  traverseInOrder(root) {
+    if (root === null) {
+      return;
+    }
+
+    this.traverseInOrder(root.leftChild)
+    console.log(root.data)
+    this.traverseInOrder(root.rightChild)
+  }
+
+  traversePostOrder(root) {
+    if (root === null) {
+      return;
+    }
+
+    this.traversePostOrder(root.leftChild)
+    this.traversePostOrder(root.rightChild)
+    console.log(root.data)
+  }
 }
 
 module.exports = BinaryTree;
