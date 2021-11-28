@@ -83,6 +83,44 @@ class BinaryTree {
 
     return 1 + Math.max(this.height(root.leftChild), this.height(root.rightChild));
   }
+
+
+  // O(n)
+  unsortedMin(root) {
+    let left = root.leftChild ? this.unsortedMin(root.leftChild) : root.data;
+    let right = root.rightChild ? this.unsortedMin(root.rightChild) : root.data;
+
+    return Math.min(Math.min(left, right), root.data);
+  }
+
+  // O(log n)
+  sortedMin(root) {
+    if (root === null) {
+      return
+    }
+
+    let current = root;
+    let last;
+    while (current !== null) {
+      last = current;
+      current = current.leftChild;
+    }
+    return last.data
+  }
+
+  equals(tree) {
+    let current = this.root;
+    if (current === null) {
+      return;
+    }
+
+    if (current.data === tree.data) {
+      let left = current.leftChild ? this.equals(current.leftChild) : true;
+      let right = current.rightChild ? this.equals(current.rightChild) : true;
+      return left === right;
+    }
+    return false;
+  }
 }
 
 module.exports = BinaryTree;
