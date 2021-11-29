@@ -108,17 +108,18 @@ class BinaryTree {
     return last.data
   }
 
-  equals(tree) {
-    let current = this.root;
-    if (current === null) {
-      return;
+  equals(node1, node2) {
+    if (node1 === null && node2 === null) {
+      return true;
     }
-
-    if (current.data === tree.data) {
-      let left = current.leftChild ? this.equals(current.leftChild) : true;
-      let right = current.rightChild ? this.equals(current.rightChild) : true;
-      return left === right;
+    if (node1 !== null && node2 !== null) {
+      return node1.data === node2.data && this.equals(node1.leftChild, node2.leftChild) && this.equals(node1.rightChild, node2.rightChild);
     }
+    // if (node1.data === node2.data) {
+    //   let left = node1.leftChild ? this.equals(node1.leftChild, node2.leftChild) : true;
+    //   let right = node1.rightChild ? this.equals(node1.rightChild, node2.leftChild) : true;
+    //   return left === right;
+    // }
     return false;
   }
 }

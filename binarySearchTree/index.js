@@ -35,11 +35,25 @@ tree2.insert(new Nodee({data: 3}))
 tree2.insert(new Nodee({data: 8}))
 tree2.insert(new Nodee({data: 26}))
 
+let root3 = new Nodee({data: 20})
+let tree3 = new BT(root3)
+
+tree3.insert(new Nodee({data: 10}))
+tree3.insert(new Nodee({data: 30}))
+tree3.insert(new Nodee({data: 6}))
+tree3.insert(new Nodee({data: 14}))
+tree3.insert(new Nodee({data: 24}))
+tree3.insert(new Nodee({data: 3}))
+tree3.insert(new Nodee({data: 8}))
+tree3.insert(new Nodee({data: 26}))
+
 // console.log(tree2.height(root2))
 // console.log(tree.height(root))
 
-console.log(tree2.unsortedMin(root2))
-console.log(tree2.sortedMin(root2))
+// console.log(tree2.unsortedMin(root2))
+// console.log(tree2.sortedMin(root2))
+
+console.log(tree.equals(tree2.root, tree3.root))
 
 // tree2.traversePreOrder(root2)
 // tree.traverseInOrder(root2)
